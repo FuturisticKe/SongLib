@@ -67,7 +67,7 @@ class SelectionVm with ChangeNotifierEx {
       if (selectedBooks.isNotEmpty) {
         await db.deleteBooks();
         localStorage.setPrefString(
-            PrefConstants.predistinatedBooksKey, selectedBooks);
+            PrefConstants.predestinatedBooksKey, selectedBooks);
         selectedBooks = "";
       }
       for (int i = 0; i < selectables.length; i++) {
@@ -85,6 +85,7 @@ class SelectionVm with ChangeNotifierEx {
     notifyListeners();
 
     localStorage.setPrefString(PrefConstants.selectedBooksKey, selectedBooks);
+    localStorage.setPrefBool(PrefConstants.wakeLockCheckKey, true);
     selectionNavigator.goToProgress();
   }
 }

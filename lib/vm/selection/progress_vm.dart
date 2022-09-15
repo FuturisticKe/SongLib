@@ -30,7 +30,7 @@ class ProgressVm with ChangeNotifierEx {
     progressNavigator = navigator;
     selectedBooks = localStorage.getPrefString(PrefConstants.selectedBooksKey);
     predistinatedBooks =
-        localStorage.getPrefString(PrefConstants.predistinatedBooksKey);
+        localStorage.getPrefString(PrefConstants.predestinatedBooksKey);
 
     if (predistinatedBooks.isNotEmpty) {
       isBusy = true;
